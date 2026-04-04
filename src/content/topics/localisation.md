@@ -15,26 +15,28 @@ relatedTopics:
   - "future-of-the-humanitarian-system"
   - "climate-and-humanitarianism"
 relatedPeople: []
-relatedOrganizations:
-  - "icva"
-  - "near-network"
+relatedOrganizations: []
 resources:
-  - title: "The Grand Bargain at Five Years"
+  - title: "The Grand Bargain at Five Years: An Independent Review"
     type: analysis
     source: "Overseas Development Institute"
-    description: "Assessment of progress against Grand Bargain commitments, including the localisation workstream."
+    url: "https://odi.org/en/publications/the-grand-bargain-at-five-years-an-independent-review/"
+    description: "ODI's independent assessment of progress against Grand Bargain commitments, including the localisation workstream."
   - title: "Turning the Humanitarian System on Its Head"
     type: report
-    source: "ALNAP"
-    description: "Major study examining what genuine localisation of humanitarian response would require."
-  - title: "Decolonising Aid"
-    type: opinion
+    source: "Oxfam"
+    url: "https://www.oxfam.org/en/research/turning-humanitarian-system-its-head"
+    description: "Major 2015 study examining what genuine localisation of humanitarian response would require, strengthening local capacity and leadership."
+  - title: "Decolonising Aid: A Reading and Resource List"
+    type: analysis
     source: "The New Humanitarian"
-    description: "Collection of perspectives on how colonial legacies shape humanitarian practice and what decolonisation means in operational terms."
+    url: "https://www.thenewhumanitarian.org/feature/2022/08/12/Decolonising-aid-a-reading-and-resource-list"
+    description: "Curated collection of perspectives on how colonial legacies shape humanitarian practice and what decolonisation means in operational terms."
   - title: "Time to Decolonise Aid"
-    type: book
-    author: "Themrise Khan, Tammam Aloudat, others"
-    description: "A collection examining the structural dimensions of power in the aid system and pathways to genuine reform."
+    type: report
+    source: "Peace Direct"
+    url: "https://www.peacedirect.org/time-to-decolonise-aid/"
+    description: "Report from a global consultation examining the structural dimensions of power in the aid system and pathways to genuine reform."
 lastUpdated: "2026-04-04"
 ---
 

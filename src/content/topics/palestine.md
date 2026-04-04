@@ -19,32 +19,27 @@ relatedPeople:
   - "francesca-albanese"
 relatedOrganizations:
   - "unrwa"
-  - "icrc"
   - "msf"
 resources:
-  - title: "Gaza's humanitarian catastrophe in numbers"
+  - title: "One year of war in Gaza"
     type: journalism
     source: "The New Humanitarian"
-    url: "https://www.thenewhumanitarian.org/news/2024/01/gaza-humanitarian-catastrophe-numbers"
-    description: "Tracking the scale of the humanitarian emergency in Gaza with verified data and reporting."
-  - title: "Legal Consequences of the Israeli Occupation - ICJ Advisory Opinion"
+    url: "https://www.thenewhumanitarian.org/feature/2024/10/04/one-year-war-gaza"
+    description: "Reporting on the scale of destruction, displacement, and humanitarian emergency after one year of conflict in Gaza."
+  - title: "Legal Consequences arising from the Policies and Practices of Israel in the Occupied Palestinian Territory"
     type: primary-source
     source: "International Court of Justice"
     url: "https://www.icj-cij.org/case/186"
-    description: "The ICJ's 2024 advisory opinion on the legal consequences arising from Israel's policies and practices in the occupied Palestinian territory."
-  - title: "UNRWA and the Palestinian Refugees"
+    description: "The ICJ's advisory opinion delivered 19 July 2024 on the legal consequences of Israel's policies in the occupied Palestinian territory."
+  - title: "Al-Shabaka Policy Network"
     type: analysis
     source: "Al-Shabaka"
     url: "https://al-shabaka.org/"
-    description: "Analysis of UNRWA's role, the politics of refugee status, and the implications of defunding."
+    description: "Palestinian policy think tank producing analysis on Palestinian rights, refugee status, and the political dimensions of the crisis."
   - title: "The Gaza Strip: The Political Economy of De-development"
     type: book
     author: "Sara Roy"
-    description: "Foundational analysis of how Israeli policies have systematically undermined Gaza's economic development."
-  - title: "Humanitarian Aid and the Occupation"
-    type: analysis
-    source: "Médecins Sans Frontières"
-    description: "MSF's critical assessment of how humanitarian aid operates within and is shaped by the occupation framework."
+    description: "Foundational analysis of how Israeli policies have systematically undermined Gaza's economic development. Published by the Institute for Palestine Studies."
 lastUpdated: "2026-04-04"
 ---
 

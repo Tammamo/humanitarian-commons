@@ -4,7 +4,7 @@ title: "Commissioner-General"
 organization: "UNRWA"
 role: "Head of the United Nations Relief and Works Agency for Palestine Refugees in the Near East since 2020."
 photo: ""
-bio: "Philippe Lazzarini is a Swiss-Italian national who has served as Commissioner-General of UNRWA since March 2020. He has led the agency through one of its most challenging periods, navigating funding crises, political attacks on the agency's mandate, and the unprecedented humanitarian emergency in Gaza from October 2023."
+bio: "Philippe Lazzarini is a Swiss national who has served as Commissioner-General of UNRWA since April 2020, having been appointed in March of that year. He has led the agency through one of its most challenging periods, navigating funding crises, political attacks on the agency's mandate, and the unprecedented humanitarian emergency in Gaza from October 2023."
 relatedTopics:
   - "palestine"
   - "future-of-the-humanitarian-system"

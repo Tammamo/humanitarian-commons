@@ -17,23 +17,23 @@ relatedTopics:
   - "climate-and-humanitarianism"
 relatedPeople: []
 relatedOrganizations:
-  - "ocha"
   - "msf"
-  - "icrc"
 resources:
-  - title: "Sudan's overlooked catastrophe"
-    type: journalism
-    source: "The New Humanitarian"
-    description: "Ongoing coverage of the humanitarian dimensions of Sudan's conflict, including access challenges and displacement."
   - title: "IPC Famine Review for Sudan"
     type: data
     source: "Integrated Food Security Phase Classification"
     url: "https://www.ipcinfo.org/"
     description: "Food security classifications showing famine and emergency conditions across Sudan."
-  - title: "Sudan: A History of Humanitarian Crisis"
+  - title: "Sudan's Agony: The Power Struggle Tearing a Nation Apart"
     type: analysis
     source: "International Crisis Group"
-    description: "Analysis of how decades of governance failure and international neglect set the conditions for the current catastrophe."
+    url: "https://www.crisisgroup.org/africa/horn-africa/sudan"
+    description: "International Crisis Group's ongoing analysis and reporting on the conflict in Sudan, its causes, and pathways to resolution."
+  - title: "Sudan Internal Displacement Data"
+    type: data
+    source: "International Organization for Migration"
+    url: "https://dtm.iom.int/sudan"
+    description: "IOM Displacement Tracking Matrix data on internal displacement across Sudan, updated regularly."
 lastUpdated: "2026-04-04"
 ---
 

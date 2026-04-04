@@ -4,7 +4,7 @@ description: "The structural crisis facing the international humanitarian system
 category: thematic
 tags: ["reform", "Grand Bargain", "UN", "funding", "coordination", "effectiveness", "accountability", "decolonisation"]
 keyFacts:
-  - "Global humanitarian needs have increased from $16 billion in 2014 to over $55 billion in 2024"
+  - "Global humanitarian appeals have grown from approximately $16 billion in 2014 to over $46 billion in 2024, with actual assessed needs even higher"
   - "The gap between assessed needs and available funding has grown to over 50% in most years"
   - "The current humanitarian architecture was established in the 1990s and has not undergone fundamental structural reform"
   - "An estimated 300 million people required humanitarian assistance in 2024"
@@ -16,22 +16,17 @@ relatedTopics:
   - "climate-and-humanitarianism"
 relatedPeople: []
 relatedOrganizations:
-  - "ocha"
-  - "icrc"
   - "msf"
 resources:
   - title: "The State of the Humanitarian System"
     type: report
     source: "ALNAP"
-    description: "The definitive periodic assessment of how the humanitarian system is performing against its stated objectives."
-  - title: "The Future of Aid"
-    type: analysis
-    source: "The New Humanitarian"
-    description: "A major editorial series examining what humanitarian action should look like in the coming decades."
-  - title: "Too Important to Fail? The Humanitarian System at a Crossroads"
+    url: "https://alnap.org/sohs/"
+    description: "ALNAP's flagship longitudinal report, published every 3-4 years since 2008, assessing how the humanitarian system is performing against its stated objectives."
+  - title: "Too Important to Fail: Addressing the Humanitarian Financing Gap"
     type: report
-    source: "Overseas Development Institute"
-    description: "Analysis of the structural challenges facing the humanitarian system and options for reform."
+    source: "High-Level Panel on Humanitarian Financing"
+    description: "The 2016 report examining the structural challenges of humanitarian financing and proposals for closing the gap between needs and resources."
   - title: "Selling Absolution: A Political Economy of Humanitarianism"
     type: book
     author: "Tammam Aloudat"
@@ -41,7 +36,7 @@ lastUpdated: "2026-04-04"
 
 ## Overview
 
-The international humanitarian system is in a state of structural crisis. The gap between the scale of needs it is expected to address and the resources, political will, and institutional capacity available to it has never been wider. Annual humanitarian appeals now exceed $55 billion, up from $16 billion a decade ago. The number of people assessed as requiring humanitarian assistance has grown to around 300 million. And the funding gap, the difference between what is asked for and what is received, consistently exceeds 50%.
+The international humanitarian system is in a state of structural crisis. The gap between the scale of needs it is expected to address and the resources, political will, and institutional capacity available to it has never been wider. Annual humanitarian appeals now exceed $46 billion, up from approximately $16 billion a decade ago. The number of people assessed as requiring humanitarian assistance has grown to around 300 million. And the funding gap, the difference between what is asked for and what is received, consistently exceeds 50%.
 
 These numbers describe a system under enormous strain. But the crisis is not simply one of scale. It is a crisis of model: the fundamental assumptions, structures, and power dynamics that define how humanitarian action is organised, funded, and delivered are increasingly inadequate to the challenges they face.
 

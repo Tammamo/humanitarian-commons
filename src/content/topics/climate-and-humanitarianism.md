@@ -15,25 +15,23 @@ relatedTopics:
   - "future-of-the-humanitarian-system"
   - "palestine"
 relatedPeople: []
-relatedOrganizations:
-  - "ocha"
-  - "ifrc"
+relatedOrganizations: []
 resources:
-  - title: "The Climate Crisis and Humanitarian Action"
-    type: analysis
-    source: "The New Humanitarian"
-    description: "How climate change is transforming the nature of humanitarian needs and the systems designed to address them."
-  - title: "Climate Change as Threat Multiplier"
+  - title: "When Rain Turns to Dust: Climate Change, Conflict and Humanitarian Action"
     type: report
     source: "ICRC"
+    url: "https://www.icrc.org/en/document/when-rain-turns-dust"
     description: "The ICRC's analysis of how climate change compounds existing vulnerabilities in conflict-affected regions."
-  - title: "Losses and Damages: A Political Economy Analysis"
-    type: academic
-    description: "Academic analysis of the loss and damage framework, examining who pays, who benefits, and the structural politics of climate finance."
-  - title: "Humanitarian Futures and Climate Adaptation"
+  - title: "Global Report on Internal Displacement"
+    type: data
+    source: "Internal Displacement Monitoring Centre"
+    url: "https://www.internal-displacement.org/global-report/"
+    description: "Annual data on disaster- and climate-related displacement worldwide, tracking trends and causes."
+  - title: "Adapting Humanitarian Action to the Effects of Climate Change"
     type: report
     source: "ALNAP"
-    description: "How the humanitarian sector needs to evolve to address climate-driven needs effectively."
+    url: "https://www.alnap.org/"
+    description: "ALNAP lessons paper examining how humanitarian actors can better integrate climate adaptation into their work."
 lastUpdated: "2026-04-04"
 ---
 
