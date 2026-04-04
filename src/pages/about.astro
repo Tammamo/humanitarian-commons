@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="About The Humanitarian Commons — an independent knowledge curation project.">
+  <section class="page-header">
+    <div class="container container--narrow">
+      <h1>About</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose">
+        <h2>What is The Humanitarian Commons?</h2>
+        <p>
+          The Humanitarian Commons is an independent knowledge curation project. It assembles
+          journalism, analysis, opinion, data, academic research, and primary sources to help
+          people understand humanitarian situations, the systems that respond to them, and the
+          structural forces that shape both.
+        </p>
+        <p>
+          The project is built on the conviction that understanding humanitarian action requires
+          more than following the news cycle. It requires engaging with the history, political
+          economy, legal frameworks, and power dynamics that produce humanitarian crises and
+          shape the responses to them. This site aims to make that deeper engagement accessible.
+        </p>
+
+        <h2>How it works</h2>
+        <p>
+          Each topic or context page on the site brings together curated resources selected
+          for their quality, credibility, and relevance. Resources include reporting from
+          independent journalism outlets, analysis from think tanks and policy organisations,
+          academic research, official documents and data, and expert commentary.
+        </p>
+        <p>
+          All content is verified and contextualised. The site does not generate or fabricate
+          information. It curates existing knowledge and presents it in a way that helps readers
+          see connections, understand context, and engage critically with humanitarian issues.
+        </p>
+        <p>
+          The knowledge graph structure allows readers to navigate between topics, people,
+          and organisations, discovering connections that might not be apparent from any single
+          source.
+        </p>
+
+        <h2>Who is this for?</h2>
+        <p>
+          The Humanitarian Commons is designed for anyone who wants to understand humanitarian
+          affairs at a level deeper than daily news coverage: humanitarian practitioners seeking
+          context for their work, academics researching humanitarian issues, students learning
+          about the field, journalists covering crises, policy makers, and engaged members of
+          the public.
+        </p>
+
+        <h2>Editorial standards</h2>
+        <p>
+          Every factual claim on this site is sourced. Resources are selected based on their
+          credibility, analytical quality, and relevance to the topic. The site distinguishes
+          clearly between reporting, analysis, and opinion. Content is regularly reviewed for
+          accuracy and currency.
+        </p>
+
+        <h2>An independent project</h2>
+        <p>
+          The Humanitarian Commons is an independent project. It is not affiliated with any
+          government, UN agency, or humanitarian organisation. This independence is essential
+          to its ability to present a critical, honest account of humanitarian action and the
+          systems that govern it.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For questions, suggestions, or corrections, please get in touch at
+          <a href="mailto:hello@humanitariancommons.org">hello@humanitariancommons.org</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .prose {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .prose h2 {
+    font-size: 1.4rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+</style>

@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const topics = (await getCollection('topics')).filter(t => !t.data.draft);
+const thematicTopics = topics.filter(t => t.data.category === 'thematic');
+const geographicTopics = topics.filter(t => t.data.category === 'geographic');
+---
+
+<BaseLayout title="The Humanitarian Commons">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container container--narrow">
+      <h1 class="hero__title">The Humanitarian Commons</h1>
+      <p class="hero__subtitle">
+        Curated knowledge for understanding humanitarian action, contexts, and systems.
+      </p>
+      <p class="hero__description">
+        An open resource assembling journalism, analysis, opinion, data, and research
+        to help practitioners, academics, and anyone concerned with humanitarian affairs
+        navigate the complexity of the world's most pressing crises.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contexts -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">Contexts</h2>
+      <p class="section__intro">Geographic and conflict-specific humanitarian situations.</p>
+      <div class="grid grid--2">
+        {geographicTopics.map(topic => (
+          <a href={`/topics/${topic.id}/`} class="topic-card">
+            <div class="topic-card__category">
+              <span class="tag tag--accent">{topic.data.region || 'Context'}</span>
+            </div>
+            <h3 class="topic-card__title">{topic.data.title}</h3>
+            <p class="topic-card__description">{topic.data.description}</p>
+            <div class="topic-card__meta">
+              {topic.data.resources.length > 0 && (
+                <span>{topic.data.resources.length} curated resources</span>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Themes -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">Themes</h2>
+      <p class="section__intro">Cross-cutting issues shaping humanitarian action and debate.</p>
+      <div class="grid grid--2">
+        {thematicTopics.map(topic => (
+          <a href={`/topics/${topic.id}/`} class="topic-card">
+            <div class="topic-card__category">
+              <span class="tag">Theme</span>
+            </div>
+            <h3 class="topic-card__title">{topic.data.title}</h3>
+            <p class="topic-card__description">{topic.data.description}</p>
+            <div class="topic-card__meta">
+              {topic.data.resources.length > 0 && (
+                <span>{topic.data.resources.length} curated resources</span>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="section about-teaser">
+    <div class="container container--narrow">
+      <h2 class="section__title">About this project</h2>
+      <p>
+        The Humanitarian Commons is an independent knowledge curation project. It brings together
+        verified, high-quality resources to help people understand humanitarian situations, the systems
+        that respond to them, and the structural forces that shape both. Every piece of content is
+        researched, verified, and contextualised.
+      </p>
+      <p>
+        <a href="/about/">Learn more about the project &rarr;</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-4xl) 0 var(--space-3xl);
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__description {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section__intro {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    font-size: 0.95rem;
+  }
+
+  .topic-card {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .topic-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .topic-card__category { margin-bottom: var(--space-sm); }
+
+  .topic-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .topic-card__description {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .topic-card__meta {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .about-teaser { text-align: center; }
+  .about-teaser p { color: var(--color-text-secondary); font-size: 1rem; }
+
+  @media (max-width: 768px) {
+    .hero__title { font-size: 2rem; }
+    .hero__subtitle { font-size: 1.05rem; }
+  }
+</style>

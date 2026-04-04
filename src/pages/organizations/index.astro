@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const orgs = (await getCollection('organizations')).filter(o => !o.data.draft).sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<BaseLayout title="Organizations" description="Key organizations in humanitarian action.">
+  <section class="page-header">
+    <div class="container container--narrow">
+      <h1>Organizations</h1>
+      <p>Key organizations shaping humanitarian response, policy, and accountability.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        {orgs.map(org => (
+          <a href={`/organizations/${org.id}/`} class="org-card">
+            {org.data.type && <span class="tag">{org.data.type.replace('-', ' ')}</span>}
+            <h3 class="card__title">
+              {org.data.acronym && org.data.acronym !== org.data.name ? org.data.acronym : org.data.name}
+            </h3>
+            {org.data.acronym && org.data.acronym !== org.data.name && (
+              <p class="org-card__full-name">{org.data.name}</p>
+            )}
+            {org.data.description && (
+              <p class="card__description">{org.data.description.slice(0, 150)}{org.data.description.length > 150 ? '...' : ''}</p>
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .page-header h1 { margin-bottom: var(--space-md); }
+  .page-header p { color: var(--color-text-secondary); font-size: 1.05rem; }
+
+  .org-card {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .org-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .org-card .tag { margin-bottom: var(--space-sm); }
+
+  .org-card__full-name {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+</style>

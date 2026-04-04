@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const orgs = await getCollection('organizations');
+  return orgs.map(org => ({
+    params: { id: org.id },
+    props: { org },
+  }));
+}
+
+const { org } = Astro.props;
+const { Content } = await render(org);
+
+const allTopics = await getCollection('topics');
+const allPeople = await getCollection('people');
+
+const relatedTopics = allTopics.filter(t =>
+  org.data.relatedTopics.includes(t.id)
+);
+const relatedPeople = allPeople.filter(p =>
+  org.data.relatedPeople.includes(p.id)
+);
+
+// Backlinks: topics that reference this org
+const backlinkTopics = allTopics.filter(t =>
+  t.data.relatedOrganizations.includes(org.id) && !org.data.relatedTopics.includes(t.id)
+);
+---
+
+<BaseLayout title={org.data.name} description={org.data.description || org.data.name}>
+  <article class="org-page">
+    <header class="org-header">
+      <div class="container container--narrow">
+        {org.data.type && <span class="tag tag--accent">{org.data.type.replace('-', ' ')}</span>}
+        <h1 class="org-header__name">
+          {org.data.name}
+          {org.data.acronym && org.data.acronym !== org.data.name && <span class="org-header__acronym">({org.data.acronym})</span>}
+        </h1>
+        {org.data.description && <p class="org-header__description">{org.data.description}</p>}
+        <div class="org-header__details">
+          {org.data.headquarters && <span>Headquarters: {org.data.headquarters}</span>}
+          {org.data.website && <a href={org.data.website} target="_blank" rel="noopener noreferrer">Website &nearr;</a>}
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    {([...relatedTopics, ...backlinkTopics].length > 0 || relatedPeople.length > 0) && (
+      <section class="section connections">
+        <div class="container container--narrow">
+          <h2 class="section__title">Connections</h2>
+          {[...relatedTopics, ...backlinkTopics].length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Related Topics</h3>
+              {[...relatedTopics, ...backlinkTopics].map(t => (
+                <a href={`/topics/${t.id}/`} class="connection-link">{t.data.title}</a>
+              ))}
+            </div>
+          )}
+          {relatedPeople.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Key People</h3>
+              {relatedPeople.map(p => (
+                <a href={`/people/${p.id}/`} class="connection-link">{p.data.name}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .org-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .org-header .tag { margin-bottom: var(--space-md); }
+
+  .org-header__name {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .org-header__acronym {
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .org-header__description {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .org-header__details {
+    display: flex;
+    gap: var(--space-lg);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .prose { font-size: 1.05rem; line-height: 1.8; }
+
+  .connections__group { margin-bottom: var(--space-lg); }
+
+  .connections__group-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .connection-link {
+    display: block;
+    padding: var(--space-xs) 0;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const topics = (await getCollection('topics')).filter(t => !t.data.draft);
+const thematicTopics = topics.filter(t => t.data.category === 'thematic');
+const geographicTopics = topics.filter(t => t.data.category === 'geographic');
+---
+
+<BaseLayout title="Topics" description="Explore humanitarian contexts and themes.">
+  <section class="page-header">
+    <div class="container container--narrow">
+      <h1>Topics</h1>
+      <p>Explore humanitarian contexts and cross-cutting themes. Each topic page assembles curated journalism, analysis, opinion, data, and research to provide a comprehensive understanding of the subject.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">Contexts</h2>
+      <div class="grid grid--2">
+        {geographicTopics.map(topic => (
+          <a href={`/topics/${topic.id}/`} class="topic-card">
+            <span class="tag tag--accent">{topic.data.region || 'Context'}</span>
+            <h3 class="card__title">{topic.data.title}</h3>
+            <p class="card__description">{topic.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">Themes</h2>
+      <div class="grid grid--2">
+        {thematicTopics.map(topic => (
+          <a href={`/topics/${topic.id}/`} class="topic-card">
+            <span class="tag">Theme</span>
+            <h3 class="card__title">{topic.data.title}</h3>
+            <p class="card__description">{topic.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-md);
+  }
+
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .topic-card {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .topic-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .topic-card .tag {
+    margin-bottom: var(--space-sm);
+  }
+</style>

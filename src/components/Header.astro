@@ -1,0 +1,151 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'Topics', href: '/topics/' },
+  { label: 'People', href: '/people/' },
+  { label: 'Organizations', href: '/organizations/' },
+  { label: 'About', href: '/about/' },
+];
+---
+
+<header class="header">
+  <div class="header__inner container--wide">
+    <a href="/" class="header__logo">
+      <span class="header__logo-mark">HC</span>
+      <span class="header__logo-text">The Humanitarian Commons</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        {navItems.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class:list={['header__nav-link', { 'header__nav-link--active': currentPath.startsWith(item.href) }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <button class="header__menu-btn" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 var(--space-xl);
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .header__logo:hover {
+    text-decoration: none;
+  }
+
+  .header__logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.02em;
+  }
+
+  .header__logo-text {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+
+  .header__nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--space-xs);
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .header__nav-link:hover {
+    color: var(--color-text);
+    background: var(--color-tag-bg);
+    text-decoration: none;
+  }
+
+  .header__nav-link--active {
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+  }
+
+  .header__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: var(--space-sm);
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__menu-btn { display: block; }
+    .header__logo-text { font-size: 0.9rem; }
+  }
+</style>
+
+<script>
+  const menuBtn = document.querySelector('.header__menu-btn');
+  const nav = document.querySelector('.header__nav');
+
+  menuBtn?.addEventListener('click', () => {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+    nav?.classList.toggle('header__nav--open');
+  });
+</script>

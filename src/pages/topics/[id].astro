@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const topics = await getCollection('topics');
+  return topics.map(topic => ({
+    params: { id: topic.id },
+    props: { topic },
+  }));
+}
+
+const { topic } = Astro.props;
+const { Content } = await render(topic);
+
+const allTopics = await getCollection('topics');
+const allPeople = await getCollection('people');
+const allOrgs = await getCollection('organizations');
+
+const relatedTopics = allTopics.filter(t =>
+  topic.data.relatedTopics.includes(t.id)
+);
+const relatedPeople = allPeople.filter(p =>
+  topic.data.relatedPeople.includes(p.id)
+);
+const relatedOrgs = allOrgs.filter(o =>
+  topic.data.relatedOrganizations.includes(o.id)
+);
+
+// Group resources by type
+const resourcesByType: Record<string, typeof topic.data.resources> = {};
+for (const resource of topic.data.resources) {
+  if (!resourcesByType[resource.type]) {
+    resourcesByType[resource.type] = [];
+  }
+  resourcesByType[resource.type].push(resource);
+}
+
+const typeLabels: Record<string, string> = {
+  'journalism': 'Journalism',
+  'analysis': 'Analysis',
+  'opinion': 'Opinion',
+  'data': 'Data & Statistics',
+  'academic': 'Academic Research',
+  'primary-source': 'Primary Sources',
+  'report': 'Reports',
+  'book': 'Books',
+  'multimedia': 'Multimedia',
+};
+---
+
+<BaseLayout title={topic.data.title} description={topic.data.description}>
+  <article class="topic-page">
+    <!-- Header -->
+    <header class="topic-header">
+      <div class="container container--narrow">
+        <div class="topic-header__meta">
+          <span class="tag tag--accent">{topic.data.category === 'geographic' ? topic.data.region || 'Context' : 'Theme'}</span>
+          {topic.data.lastUpdated && (
+            <span class="topic-header__updated">Updated {topic.data.lastUpdated}</span>
+          )}
+        </div>
+        <h1 class="topic-header__title">{topic.data.title}</h1>
+        <p class="topic-header__description">{topic.data.description}</p>
+        {topic.data.tags.length > 0 && (
+          <div class="topic-header__tags">
+            {topic.data.tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+
+    <!-- Key Facts -->
+    {topic.data.keyFacts.length > 0 && (
+      <section class="section key-facts">
+        <div class="container container--narrow">
+          <h2 class="section__title">Key Facts</h2>
+          <ul class="key-facts__list">
+            {topic.data.keyFacts.map(fact => (
+              <li class="key-facts__item">{fact}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <!-- Main Content -->
+    <section class="section topic-content">
+      <div class="container container--narrow">
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Resources -->
+    {topic.data.resources.length > 0 && (
+      <section class="section resources-section">
+        <div class="container">
+          <h2 class="section__title">Curated Resources</h2>
+          {Object.entries(resourcesByType).map(([type, resources]) => (
+            <div class="resource-group">
+              <h3 class="resource-group__title">{typeLabels[type] || type}</h3>
+              <div class="grid grid--2">
+                {resources.map(resource => (
+                  <div class="resource-card">
+                    <span class="resource-card__type">{typeLabels[resource.type] || resource.type}</span>
+                    {resource.url ? (
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer" class="resource-card__title">
+                        {resource.title} &nearr;
+                      </a>
+                    ) : (
+                      <span class="resource-card__title">{resource.title}</span>
+                    )}
+                    {resource.author && <span class="resource-card__source">By {resource.author}</span>}
+                    {resource.source && <span class="resource-card__source">{resource.source}</span>}
+                    {resource.description && <p class="resource-card__description">{resource.description}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Connections -->
+    {(relatedTopics.length > 0 || relatedPeople.length > 0 || relatedOrgs.length > 0) && (
+      <section class="section connections">
+        <div class="container">
+          <h2 class="section__title">Connections</h2>
+          <div class="connections__grid">
+            {relatedTopics.length > 0 && (
+              <div class="connections__group">
+                <h3 class="connections__group-title">Related Topics</h3>
+                {relatedTopics.map(t => (
+                  <a href={`/topics/${t.id}/`} class="connection-link">
+                    <span class="connection-link__dot connection-link__dot--topic"></span>
+                    {t.data.title}
+                  </a>
+                ))}
+              </div>
+            )}
+            {relatedPeople.length > 0 && (
+              <div class="connections__group">
+                <h3 class="connections__group-title">Key People</h3>
+                {relatedPeople.map(p => (
+                  <a href={`/people/${p.id}/`} class="connection-link">
+                    <span class="connection-link__dot connection-link__dot--person"></span>
+                    {p.data.name}
+                    {p.data.title && <span class="connection-link__meta"> — {p.data.title}</span>}
+                  </a>
+                ))}
+              </div>
+            )}
+            {relatedOrgs.length > 0 && (
+              <div class="connections__group">
+                <h3 class="connections__group-title">Key Organizations</h3>
+                {relatedOrgs.map(o => (
+                  <a href={`/organizations/${o.id}/`} class="connection-link">
+                    <span class="connection-link__dot connection-link__dot--org"></span>
+                    {o.data.name}
+                    {o.data.acronym && o.data.acronym !== o.data.name && <span class="connection-link__meta"> ({o.data.acronym})</span>}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .topic-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .topic-header__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .topic-header__updated {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .topic-header__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .topic-header__description {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .topic-header__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  /* Key Facts */
+  .key-facts {
+    background: var(--color-accent-subtle);
+    padding: var(--space-xl) 0;
+    border-radius: 0;
+  }
+
+  .key-facts__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-facts__item {
+    padding: var(--space-sm) 0;
+    padding-left: var(--space-lg);
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .key-facts__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  .key-facts__item + .key-facts__item {
+    border-top: 1px solid rgba(43, 90, 77, 0.1);
+  }
+
+  /* Prose */
+  .prose {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.5rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(h3) {
+    font-size: 1.2rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  /* Resources */
+  .resource-group {
+    margin-bottom: var(--space-xl);
+  }
+
+  .resource-group__title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Connections */
+  .connections__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .connections__group-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-md);
+  }
+
+  .connection-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .connection-link:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .connection-link__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .connection-link__dot--topic { background: var(--color-accent); }
+  .connection-link__dot--person { background: #5B7BB5; }
+  .connection-link__dot--org { background: #B5855B; }
+
+  .connection-link__meta {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .topic-header__title { font-size: 1.75rem; }
+    .connections__grid { grid-template-columns: 1fr; }
+  }
+</style>
