@@ -51,3 +51,10 @@ The application of international humanitarian law (IHL) to the situation in Pale
 Critical scholarship has long examined how humanitarian aid in Palestine functions within, and is constrained by, the political economy of occupation. Sara Roy's concept of "de-development" describes the systematic undermining of Gaza's economic capacity. Others have analysed how donor funding patterns, conditionality, and the institutional architecture of aid delivery have reinforced rather than challenged the structural conditions producing the crisis.
 
 This analysis is particularly relevant to understanding how the humanitarian system responds to situations where the root causes of suffering are political and where the traditional humanitarian principles of neutrality and impartiality are tested by the realities of asymmetric power.
+
+## Palestine Reading List
+### Books
+- [[The Question of Palestine]] by [[Edward Said]]
+### Fiction
+- [[Mornings in Jenin]] by [[Susan Abulhawa]]
+- 
