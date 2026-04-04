@@ -20,26 +20,7 @@ relatedPeople:
 relatedOrganizations:
   - "unrwa"
   - "msf"
-resources:
-  - title: "One year of war in Gaza"
-    type: journalism
-    source: "The New Humanitarian"
-    url: "https://www.thenewhumanitarian.org/feature/2024/10/04/one-year-war-gaza"
-    description: "Reporting on the scale of destruction, displacement, and humanitarian emergency after one year of conflict in Gaza."
-  - title: "Legal Consequences arising from the Policies and Practices of Israel in the Occupied Palestinian Territory"
-    type: primary-source
-    source: "International Court of Justice"
-    url: "https://www.icj-cij.org/case/186"
-    description: "The ICJ's advisory opinion delivered 19 July 2024 on the legal consequences of Israel's policies in the occupied Palestinian territory."
-  - title: "Al-Shabaka Policy Network"
-    type: analysis
-    source: "Al-Shabaka"
-    url: "https://al-shabaka.org/"
-    description: "Palestinian policy think tank producing analysis on Palestinian rights, refugee status, and the political dimensions of the crisis."
-  - title: "The Gaza Strip: The Political Economy of De-development"
-    type: book
-    author: "Sara Roy"
-    description: "Foundational analysis of how Israeli policies have systematically undermined Gaza's economic development. Published by the Institute for Palestine Studies."
+resources: []
 lastUpdated: "2026-04-04"
 ---
 

@@ -16,22 +16,7 @@ relatedTopics:
   - "palestine"
 relatedPeople: []
 relatedOrganizations: []
-resources:
-  - title: "When Rain Turns to Dust: Climate Change, Conflict and Humanitarian Action"
-    type: report
-    source: "ICRC"
-    url: "https://www.icrc.org/en/document/when-rain-turns-dust"
-    description: "The ICRC's analysis of how climate change compounds existing vulnerabilities in conflict-affected regions."
-  - title: "Global Report on Internal Displacement"
-    type: data
-    source: "Internal Displacement Monitoring Centre"
-    url: "https://www.internal-displacement.org/global-report/"
-    description: "Annual data on disaster- and climate-related displacement worldwide, tracking trends and causes."
-  - title: "Adapting Humanitarian Action to the Effects of Climate Change"
-    type: report
-    source: "ALNAP"
-    url: "https://www.alnap.org/"
-    description: "ALNAP lessons paper examining how humanitarian actors can better integrate climate adaptation into their work."
+resources: []
 lastUpdated: "2026-04-04"
 ---
 

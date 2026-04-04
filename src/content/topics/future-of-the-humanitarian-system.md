@@ -17,20 +17,7 @@ relatedTopics:
 relatedPeople: []
 relatedOrganizations:
   - "msf"
-resources:
-  - title: "The State of the Humanitarian System"
-    type: report
-    source: "ALNAP"
-    url: "https://alnap.org/sohs/"
-    description: "ALNAP's flagship longitudinal report, published every 3-4 years since 2008, assessing how the humanitarian system is performing against its stated objectives."
-  - title: "Too Important to Fail: Addressing the Humanitarian Financing Gap"
-    type: report
-    source: "High-Level Panel on Humanitarian Financing"
-    description: "The 2016 report examining the structural challenges of humanitarian financing and proposals for closing the gap between needs and resources."
-  - title: "Selling Absolution: A Political Economy of Humanitarianism"
-    type: book
-    author: "Tammam Aloudat"
-    description: "A forthcoming critical examination of how the humanitarian system functions as a political and economic enterprise."
+resources: []
 lastUpdated: "2026-04-04"
 ---
 
