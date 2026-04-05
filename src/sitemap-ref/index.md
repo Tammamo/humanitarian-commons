@@ -11,7 +11,7 @@ title: The Humanitarian Commons
 
 **Subtitle:** Curated knowledge for understanding humanitarian action, contexts, and systems.
 
-**Notice:** This site is still under construction, please give feedback, corrections, and suggestions [here](https://forms.gle/u1KqJF1BSiD56VZu5).
+**Subtitle:** This site is still under construction, please give feedback, corrections, and suggestions [here](https://forms.gle/u1KqJF1BSiD56VZu5).
 
 **Description:** An open resource assembling journalism, analysis, opinion, data, and research to help practitioners, academics, and anyone concerned with humanitarian affairs navigate the complexity of the world's most pressing crises.
 
