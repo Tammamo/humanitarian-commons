@@ -57,6 +57,7 @@ const organizations = defineCollection({
     description: z.string().optional(),
     headquarters: z.string().optional(),
     website: z.string().url().optional(),
+    logo: z.string().optional(),
     relatedTopics: z.array(z.string()).default([]),
     relatedPeople: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
