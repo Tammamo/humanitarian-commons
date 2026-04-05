@@ -18,6 +18,11 @@ const orgs = (await getCollection('organizations')).filter(o => !o.data.draft).s
       <div class="grid grid--3">
         {orgs.map(org => (
           <a href={`/organizations/${org.id}/`} class="org-card">
+            {org.data.logo && (
+              <div class="org-card__logo">
+                <img src={org.data.logo} alt={`${org.data.name} logo`} loading="lazy" />
+              </div>
+            )}
             {org.data.type && <span class="tag">{org.data.type.replace('-', ' ')}</span>}
             <h3 class="card__title">
               {org.data.acronym && org.data.acronym !== org.data.name ? org.data.acronym : org.data.name}
@@ -58,6 +63,21 @@ const orgs = (await getCollection('organizations')).filter(o => !o.data.draft).s
     box-shadow: var(--shadow-md);
     border-color: var(--color-accent);
     text-decoration: none;
+  }
+
+  .org-card__logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .org-card__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .org-card .tag { margin-bottom: var(--space-sm); }
