@@ -5,6 +5,7 @@ type: other
 description: "The guardian of the Geneva Conventions and the world's oldest and largest humanitarian organisation focused on the protection of victims of armed conflict."
 headquarters: "Geneva, Switzerland"
 website: "https://www.icrc.org"
+logo: "/logos/icrc.svg"
 relatedTopics:
   - "future-of-the-humanitarian-system"
   - "palestine"
