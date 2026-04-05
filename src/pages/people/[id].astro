@@ -15,6 +15,7 @@ const { Content } = await render(person);
 
 const allTopics = await getCollection('topics');
 const allOrgs = await getCollection('organizations');
+const allLibrary = await getCollection('library');
 
 const relatedTopics = allTopics.filter(t =>
   person.data.relatedTopics.includes(t.id)
@@ -27,6 +28,12 @@ const relatedOrgs = allOrgs.filter(o =>
 const backlinkTopics = allTopics.filter(t =>
   t.data.relatedPeople.includes(person.id) && !person.data.relatedTopics.includes(t.id)
 );
+
+// Find library items by this author
+const authorWorks = allLibrary.filter(l => l.data.authorId === person.id);
+
+// Determine if this is an author/academic (non-practitioner)
+const isAuthor = ['author', 'academic', 'thinker', 'journalist'].includes(person.data.category);
 ---
 
 <BaseLayout title={person.data.name} description={person.data.bio || `${person.data.name} — ${person.data.title || ''}`}>
@@ -55,10 +62,21 @@ const backlinkTopics = allTopics.filter(t =>
       </div>
     </section>
 
-    {(relatedTopics.length > 0 || backlinkTopics.length > 0 || relatedOrgs.length > 0) && (
+    {(relatedTopics.length > 0 || backlinkTopics.length > 0 || relatedOrgs.length > 0 || authorWorks.length > 0) && (
       <section class="section connections">
         <div class="container container--narrow">
           <h2 class="section__title">Connections</h2>
+          {authorWorks.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Works in Library</h3>
+              {authorWorks.map(w => (
+                <a href={`/library/${w.id}/`} class="connection-link">
+                  <em>{w.data.title}</em>
+                  {w.data.year && <span class="connection-year"> ({w.data.year})</span>}
+                </a>
+              ))}
+            </div>
+          )}
           {[...relatedTopics, ...backlinkTopics].length > 0 && (
             <div class="connections__group">
               <h3 class="connections__group-title">Related Topics</h3>
@@ -151,6 +169,11 @@ const backlinkTopics = allTopics.filter(t =>
     padding: var(--space-xs) 0;
     font-family: var(--font-heading);
     font-size: 0.95rem;
+  }
+
+  .connection-year {
+    color: var(--color-text-muted);
+    font-style: normal;
   }
 
   @media (max-width: 768px) {
