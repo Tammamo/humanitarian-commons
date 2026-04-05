@@ -5,6 +5,7 @@ type: ngo
 description: "An international, independent medical humanitarian organisation that provides emergency medical assistance in more than 70 countries worldwide."
 headquarters: "Geneva, Switzerland"
 website: "https://www.msf.org"
+logo: "/logos/msf.svg"
 relatedTopics:
   - "palestine"
   - "sudan"
