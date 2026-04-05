@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const items = await getCollection('library');
+  return items.map(item => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const allTopics = await getCollection('topics');
+const allPeople = await getCollection('people');
+const allOrgs = await getCollection('organizations');
+const allLibrary = await getCollection('library');
+
+const relatedTopics = allTopics.filter(t =>
+  item.data.relatedTopics.includes(t.id)
+);
+const relatedPeople = allPeople.filter(p =>
+  item.data.relatedPeople.includes(p.id)
+);
+const relatedOrgs = allOrgs.filter(o =>
+  item.data.relatedOrganizations.includes(o.id)
+);
+
+// Find the author's person page if authorId is set
+const authorPerson = item.data.authorId
+  ? allPeople.find(p => p.id === item.data.authorId)
+  : null;
+
+// Find other works by the same author
+const otherWorks = allLibrary.filter(l =>
+  l.id !== item.id && l.data.authorId === item.data.authorId && item.data.authorId
+);
+
+// Backlinks: topics that reference this library item's topics
+const backlinkTopics = allTopics.filter(t =>
+  !item.data.relatedTopics.includes(t.id) &&
+  t.data.relatedPeople.some(pid => item.data.relatedPeople.includes(pid))
+);
+
+const typeLabels: Record<string, string> = {
+  book: 'Book',
+  article: 'Article',
+  report: 'Report',
+  essay: 'Essay',
+};
+---
+
+<BaseLayout title={item.data.title} description={item.data.description}>
+  <article class="library-page">
+    <header class="library-header">
+      <div class="container container--narrow">
+        <span class="library-header__type tag tag--accent">{typeLabels[item.data.type]}</span>
+        <h1 class="library-header__title">{item.data.title}</h1>
+        <p class="library-header__author">
+          {authorPerson ? (
+            <a href={`/people/${authorPerson.id}/`}>{item.data.author}</a>
+          ) : (
+            item.data.author
+          )}
+          {item.data.year && <span class="library-header__year"> ({item.data.year})</span>}
+        </p>
+        <p class="library-header__description">{item.data.description}</p>
+
+        <div class="library-header__meta">
+          {item.data.publisher && (
+            <div class="library-header__meta-item">
+              <span class="library-header__meta-label">Publisher</span>
+              <span>{item.data.publisher}</span>
+            </div>
+          )}
+          {item.data.isbn && (
+            <div class="library-header__meta-item">
+              <span class="library-header__meta-label">ISBN</span>
+              <span>{item.data.isbn}</span>
+            </div>
+          )}
+          {item.data.doi && (
+            <div class="library-header__meta-item">
+              <span class="library-header__meta-label">DOI</span>
+              <span>{item.data.doi}</span>
+            </div>
+          )}
+          {item.data.url && (
+            <div class="library-header__meta-item">
+              <a href={item.data.url} target="_blank" rel="noopener noreferrer" class="library-header__link">
+                View source ↗
+              </a>
+            </div>
+          )}
+        </div>
+
+        {item.data.tags.length > 0 && (
+          <div class="library-header__tags">
+            {item.data.tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    {(relatedTopics.length > 0 || relatedPeople.length > 0 || relatedOrgs.length > 0 || otherWorks.length > 0) && (
+      <section class="section connections">
+        <div class="container container--narrow">
+          <h2 class="section__title">Connections</h2>
+
+          {relatedTopics.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Related Topics</h3>
+              {relatedTopics.map(t => (
+                <a href={`/topics/${t.id}/`} class="connection-link">{t.data.title}</a>
+              ))}
+            </div>
+          )}
+
+          {relatedPeople.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Related People</h3>
+              {relatedPeople.map(p => (
+                <a href={`/people/${p.id}/`} class="connection-link">{p.data.name}</a>
+              ))}
+            </div>
+          )}
+
+          {relatedOrgs.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Related Organizations</h3>
+              {relatedOrgs.map(o => (
+                <a href={`/organizations/${o.id}/`} class="connection-link">{o.data.name}</a>
+              ))}
+            </div>
+          )}
+
+          {otherWorks.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Other Works by {item.data.author}</h3>
+              {otherWorks.map(w => (
+                <a href={`/library/${w.id}/`} class="connection-link">{w.data.title}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .library-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .library-header__type {
+    margin-bottom: var(--space-md);
+    display: inline-block;
+  }
+
+  .library-header__title {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  .library-header__author {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+  }
+
+  .library-header__author a {
+    color: var(--color-accent);
+  }
+
+  .library-header__year {
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  .library-header__description {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .library-header__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .library-header__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: 0.9rem;
+  }
+
+  .library-header__meta-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+
+  .library-header__link {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+  }
+
+  .library-header__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .prose {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .connections__group {
+    margin-bottom: var(--space-lg);
+  }
+
+  .connections__group-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .connection-link {
+    display: block;
+    padding: var(--space-xs) 0;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .library-header__title { font-size: 1.5rem; }
+    .library-header__meta { flex-direction: column; gap: var(--space-md); }
+  }
+</style>
