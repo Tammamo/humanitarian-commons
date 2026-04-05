@@ -33,26 +33,30 @@ const backlinkTopics = allTopics.filter(t =>
   <article class="org-page">
     <header class="org-header">
       <div class="container container--narrow">
-        {org.data.type && <span class="tag tag--accent">{org.data.type.replace('-', ' ')}</span>}
-        <h1 class="org-header__name">
-          {org.data.name}
-          {org.data.acronym && org.data.acronym !== org.data.name && <span class="org-header__acronym">({org.data.acronym})</span>}
-        </h1>
-        {org.data.description && <p class="org-header__description">{org.data.description}</p>}
-        <div class="org-header__details">
-          {org.data.headquarters && <span>Headquarters: {org.data.headquarters}</span>}
-          {org.data.website && <a href={org.data.website} target="_blank" rel="noopener noreferrer">Website &nearr;</a>}
+        <div class="org-header__layout">
+          <div class="org-header__text">
+            {org.data.type && <span class="tag tag--accent">{org.data.type.replace('-', ' ')}</span>}
+            <h1 class="org-header__name">
+              {org.data.name}
+              {org.data.acronym && org.data.acronym !== org.data.name && <span class="org-header__acronym">({org.data.acronym})</span>}
+            </h1>
+            {org.data.description && <p class="org-header__description">{org.data.description}</p>}
+            <div class="org-header__details">
+              {org.data.headquarters && <span>Headquarters: {org.data.headquarters}</span>}
+              {org.data.website && <a href={org.data.website} target="_blank" rel="noopener noreferrer">Website &nearr;</a>}
+            </div>
+          </div>
+          {org.data.logo && (
+            <div class="org-logo">
+              <img src={org.data.logo} alt={`${org.data.name} logo`} />
+            </div>
+          )}
         </div>
       </div>
     </header>
 
     <section class="section">
       <div class="container container--narrow">
-        {org.data.logo && (
-          <div class="org-logo">
-            <img src={org.data.logo} alt={`${org.data.name} logo`} />
-          </div>
-        )}
         <div class="prose">
           <Content />
         </div>
@@ -90,6 +94,17 @@ const backlinkTopics = allTopics.filter(t =>
     padding: var(--space-3xl) 0 var(--space-xl);
   }
 
+  .org-header__layout {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+
+  .org-header__text {
+    flex: 1;
+    min-width: 0;
+  }
+
   .org-header .tag { margin-bottom: var(--space-md); }
 
   .org-header__name {
@@ -118,9 +133,9 @@ const backlinkTopics = allTopics.filter(t =>
   }
 
   .org-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: var(--space-lg);
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,6 +145,16 @@ const backlinkTopics = allTopics.filter(t =>
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+  }
+
+  @media (max-width: 600px) {
+    .org-header__layout {
+      flex-direction: column;
+    }
+    .org-logo {
+      width: 120px;
+      height: 120px;
+    }
   }
 
   .prose { font-size: 1.05rem; line-height: 1.8; }
