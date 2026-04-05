@@ -1,5 +1,6 @@
 ---
 name: "Philippe Lazzarini"
+category: practitioner
 title: "Commissioner-General"
 organization: "UNRWA"
 role: "Head of the United Nations Relief and Works Agency for Palestine Refugees in the Near East since 2020."
