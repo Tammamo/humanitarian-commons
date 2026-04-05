@@ -14,4 +14,6 @@ relatedOrganizations:
 links: []
 ---
 
-Albanese's mandate covers the human rights situation in the occupied Palestinian territories. Her reports to the UN Human Rights Council and General Assembly have addressed the legal framework of occupation, the application of international humanitarian law, and the rights of Palestinian refugees. Her work has drawn both strong support from those advocating for Palestinian rights and significant political opposition.
+Albanese's mandate covers the human rights situation in the occupied [Palestinian](https://humanitariancommons.org/topics/palestine/) territories. Her reports to the UN Human Rights Council and General Assembly have addressed the legal framework of occupation, the application of international humanitarian law, and the rights of Palestinian refugees. Her work has drawn both strong support from those advocating for Palestinian rights and significant political opposition.
+
+Her assessments have been particularly significant in the context of [UNRWA](https://humanitariancommons.org/organizations/unrwa/)'s funding crisis and the broader debates about the [future of the humanitarian system](https://humanitariancommons.org/topics/future-of-the-humanitarian-system/), where the legal dimensions of the Palestinian situation intersect with questions about the international community's willingness to uphold its own norms.

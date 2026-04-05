@@ -18,6 +18,8 @@ relatedPeople:
   - "philippe-lazzarini"
   - "francesca-albanese"
   - "pierre-krahenbuhl"
+  - "edward-said"
+  - "mirjana-spoljaric-egger"
 relatedOrganizations:
   - "unrwa"
   - "msf"
@@ -36,27 +38,28 @@ The humanitarian dimensions of the Palestinian situation cannot be understood se
 
 The escalation of hostilities from October 2023 has produced a humanitarian catastrophe of unprecedented scale in Gaza. The territory, home to approximately 2.3 million people, has experienced massive destruction of civilian infrastructure, including hospitals, schools, and residential areas. The near-total collapse of health, water, and sanitation systems has created conditions that the United Nations and international humanitarian organisations have described as among the worst in any contemporary conflict.
 
-Access for humanitarian organisations has been severely constrained, with aid deliveries repeatedly obstructed. The civilian death toll has been staggering, with a significant proportion being women and children. The destruction has raised fundamental questions about the application of international humanitarian law and the capacity of the international system to protect civilian populations.
+Access for humanitarian organisations has been severely constrained, with aid deliveries repeatedly obstructed. [MSF](https://humanitariancommons.org/organizations/msf/) has been among the organisations documenting the destruction of health facilities and the impossible conditions for medical response. The civilian death toll has been staggering, with a significant proportion being women and children. The destruction has raised fundamental questions about the application of international humanitarian law and the capacity of the international system to protect civilian populations.
 
 ## UNRWA and the Refugee Question
 
-The United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA) has been the primary provider of education, health, and social services to Palestinian refugees since 1950. It serves over 5.9 million registered refugees across the occupied Palestinian territory, Jordan, Lebanon, and Syria. UNRWA's role is unique in the UN system: it is both a humanitarian agency and, by its very existence, a political marker of the unresolved refugee question.
+The [United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA)](https://humanitariancommons.org/organizations/unrwa/) has been the primary provider of education, health, and social services to Palestinian refugees since 1950. It serves over 5.9 million registered refugees across the occupied Palestinian territory, Jordan, Lebanon, and Syria. UNRWA's role is unique in the UN system: it is both a humanitarian agency and, by its very existence, a political marker of the unresolved refugee question.
 
-The suspension of funding to UNRWA by multiple donor governments in early 2024 created an acute crisis for the agency's operations at the very moment when its services were most desperately needed. The funding decisions, and the political dynamics surrounding them, illustrate how humanitarian assistance to Palestinians remains deeply entangled with geopolitical interests.
+The suspension of funding to UNRWA by multiple donor governments in early 2024 created an acute crisis for the agency's operations at the very moment when its services were most desperately needed. Commissioner-General [Philippe Lazzarini](https://humanitariancommons.org/people/philippe-lazzarini/) has led the agency through this period, advocating for the restoration of funding and the political necessity of UNRWA's mandate. The funding decisions, and the political dynamics surrounding them, illustrate how humanitarian assistance to Palestinians remains deeply entangled with geopolitical interests.
 
 ## International Humanitarian Law
 
-The application of international humanitarian law (IHL) to the situation in Palestine has been a central axis of debate. The ICJ's 2024 advisory opinion, which declared the Israeli occupation of Palestinian territories unlawful and called for its end, represented a significant legal development. Questions of proportionality, distinction between civilians and combatants, the prohibition on collective punishment, and the obligations of an occupying power are all live issues in the Palestinian context.
+The application of international humanitarian law (IHL) to the situation in Palestine has been a central axis of debate. The ICJ's 2024 advisory opinion, which declared the Israeli occupation of Palestinian territories unlawful and called for its end, represented a significant legal development. [Francesca Albanese](https://humanitariancommons.org/people/francesca-albanese/), the UN Special Rapporteur on the occupied Palestinian territories, has produced some of the most detailed legal assessments of the situation. Questions of proportionality, distinction between civilians and combatants, the prohibition on collective punishment, and the obligations of an occupying power are all live issues in the Palestinian context.
+
+The [ICRC](https://humanitariancommons.org/organizations/icrc/), as guardian of the Geneva Conventions, has a particular responsibility in this context, though its doctrine of confidential dialogue with parties to the conflict has drawn scrutiny given the scale of documented violations.
 
 ## The Political Economy of Aid
 
 Critical scholarship has long examined how humanitarian aid in Palestine functions within, and is constrained by, the political economy of occupation. Sara Roy's concept of "de-development" describes the systematic undermining of Gaza's economic capacity. Others have analysed how donor funding patterns, conditionality, and the institutional architecture of aid delivery have reinforced rather than challenged the structural conditions producing the crisis.
 
-This analysis is particularly relevant to understanding how the humanitarian system responds to situations where the root causes of suffering are political and where the traditional humanitarian principles of neutrality and impartiality are tested by the realities of asymmetric power.
+This analysis is particularly relevant to understanding how the [humanitarian system](https://humanitariancommons.org/topics/future-of-the-humanitarian-system/) responds to situations where the root causes of suffering are political and where the traditional humanitarian principles of neutrality and impartiality are tested by the realities of asymmetric power.
 
 ## Palestine Reading List
 ### Books
-- [[The Question of Palestine]] by [[Edward Said]]
+- [The Question of Palestine](https://humanitariancommons.org/library/the-question-of-palestine/) by [Edward Said](https://humanitariancommons.org/people/edward-said/)
 ### Fiction
-- [[Mornings in Jenin]] by [[Susan Abulhawa]]
-- 
+- *Mornings in Jenin* by Susan Abulhawa

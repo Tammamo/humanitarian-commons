@@ -23,7 +23,7 @@ lastUpdated: "2026-04-04"
 
 ## Overview
 
-Localisation in humanitarian action refers to the process of recognising, respecting, and strengthening the leadership of local and national actors in humanitarian preparedness, response, and recovery. It is among the most discussed and contested reform agendas in the humanitarian system, touching fundamental questions about who holds power, who controls resources, and whose knowledge counts in responding to crises.
+Localisation in humanitarian action refers to the process of recognising, respecting, and strengthening the leadership of local and national actors in humanitarian preparedness, response, and recovery. It is among the most discussed and contested reform agendas in the [humanitarian system](https://humanitariancommons.org/topics/future-of-the-humanitarian-system/), touching fundamental questions about who holds power, who controls resources, and whose knowledge counts in responding to crises.
 
 The concept gained formal international policy recognition through the Grand Bargain, a set of commitments made at the 2016 World Humanitarian Summit aimed at improving the efficiency and effectiveness of humanitarian action. One of its central pledges was to increase direct funding to local and national responders to at least 25% of international humanitarian funding. Nearly a decade later, this target remains overwhelmingly unmet: direct funding to local actors hovers around 1-2% of the total.
 
@@ -39,8 +39,12 @@ Increasingly, the localisation debate has converged with broader discussions abo
 
 This analysis points to the ways in which humanitarian knowledge production, priority-setting, and accountability mechanisms are dominated by institutions in the Global North. It questions not only who receives funding but who defines what counts as a crisis, what constitutes an appropriate response, and what standards of accountability apply. The decolonisation lens reframes localisation from a technical reform agenda to a political project concerned with justice and self-determination.
 
+The crisis in [Sudan](https://humanitariancommons.org/topics/sudan/) provides a stark illustration: local Sudanese organisations have been among the primary responders, yet they receive a fraction of the funding flowing to international organisations. In [Palestine](https://humanitariancommons.org/topics/palestine/), Palestinian civil society has long been the backbone of community resilience, yet the aid architecture channels resources through international intermediaries.
+
 ## Challenges and Critiques
 
 The localisation agenda itself has faced criticism from multiple directions. Some argue that it romanticises "the local" without acknowledging the diversity, inequalities, and power dynamics within local contexts. Others point to legitimate concerns about fiduciary risk, accountability to affected populations, and the capacity of some local organisations to manage large-scale funding. There is also the question of whether "localisation" as framed by the international system is genuinely transformative or merely a rebranding of existing power relations.
+
+[MSF](https://humanitariancommons.org/organizations/msf/), as one of the largest international humanitarian NGOs, occupies an interesting position in this debate: its operational independence and willingness to critique the system coexists with its own status as a large, Northern-headquartered institution.
 
 Despite these critiques, the fundamental observation underlying the localisation agenda remains difficult to contest: the humanitarian system's current configuration systematically marginalises the actors best positioned to respond to crises, and this marginalisation has consequences for the quality, relevance, and sustainability of humanitarian assistance.

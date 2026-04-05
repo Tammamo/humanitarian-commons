@@ -12,6 +12,7 @@ relatedTopics:
   - "sudan"
 relatedPeople:
   - "pierre-krahenbuhl"
+  - "mirjana-spoljaric-egger"
 links: []
 ---
 
@@ -31,7 +32,7 @@ The organisation's 2026 budget stands at approximately CHF 1.8 billion, a signif
 
 ## Leadership
 
-The ICRC is governed by its Assembly, composed exclusively of Swiss citizens, a feature that has drawn both praise for ensuring neutrality and criticism for limiting diversity. The current President is Mirjana Spoljaric Egger, who took office in October 2022 and was re-elected in February 2026. The Director-General since April 2024 is Pierre Krähenbühl, a veteran of the organisation who returned after serving as Commissioner-General of UNRWA.
+The ICRC is governed by its Assembly, composed exclusively of Swiss citizens, a feature that has drawn both praise for ensuring neutrality and criticism for limiting diversity. The current President is [Mirjana Spoljaric Egger](https://humanitariancommons.org/people/mirjana-spoljaric-egger/), who took office in October 2022 and was re-elected in February 2026. The Director-General since April 2024 is [Pierre Krähenbühl](https://humanitariancommons.org/people/pierre-krahenbuhl/), a veteran of the organisation who returned after serving as Commissioner-General of [UNRWA](https://humanitariancommons.org/organizations/unrwa/).
 
 ## Critiques and challenges
 

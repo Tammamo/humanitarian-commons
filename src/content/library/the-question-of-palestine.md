@@ -22,7 +22,7 @@ relatedOrganizations: []
 
 ## Overview
 
-*The Question of Palestine*, first published in 1979, is Edward Said's most sustained engagement with the political history and present reality of the Palestinian people. Writing in the aftermath of the Camp David Accords, Said set out to explain the Palestinian experience to a Western audience that had largely been exposed only to Israeli and American framings of the conflict.
+*The Question of Palestine*, first published in 1979, is [Edward Said](https://humanitariancommons.org/people/edward-said/)'s most sustained engagement with the political history and present reality of the [Palestinian](https://humanitariancommons.org/topics/palestine/) people. Writing in the aftermath of the Camp David Accords, Said set out to explain the Palestinian experience to a Western audience that had largely been exposed only to Israeli and American framings of the conflict.
 
 ## Core Argument
 

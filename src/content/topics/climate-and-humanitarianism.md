@@ -22,7 +22,7 @@ lastUpdated: "2026-04-04"
 
 ## Overview
 
-Climate change is fundamentally reshaping the landscape of humanitarian need. Rising temperatures, shifting weather patterns, sea level rise, and the increasing frequency and intensity of extreme weather events are driving displacement, food insecurity, water scarcity, and conflict in ways that challenge the assumptions underpinning the current humanitarian system.
+Climate change is fundamentally reshaping the landscape of humanitarian need. Rising temperatures, shifting weather patterns, sea level rise, and the increasing frequency and intensity of extreme weather events are driving displacement, food insecurity, water scarcity, and conflict in ways that challenge the assumptions underpinning the current [humanitarian system](https://humanitariancommons.org/topics/future-of-the-humanitarian-system/).
 
 The humanitarian system was designed to respond to acute, time-limited emergencies: a natural disaster, a conflict, a disease outbreak. Climate change produces something different: a slow, escalating, and essentially permanent transformation of the conditions in which millions of people live. This mismatch between the nature of climate-driven needs and the architecture of humanitarian response is one of the defining challenges facing the sector.
 
@@ -36,8 +36,10 @@ This framing challenges the conventional humanitarian narrative of "natural" dis
 
 Climate change is already a major driver of human displacement, though its effects are often intertwined with other factors including conflict, economic precarity, and governance failures. The Internal Displacement Monitoring Centre estimates that climate-related disasters displace tens of millions of people annually. Unlike conflict displacement, which may resolve with peace agreements, climate-driven displacement is often permanent: communities cannot return to land that has become uninhabitable.
 
-The legal and institutional frameworks for protecting displaced people were not designed for climate mobility. The 1951 Refugee Convention does not recognise climate displacement as grounds for refugee status, and the governance architecture for managing climate-related movement remains fragmented and inadequate.
+The legal and institutional frameworks for protecting displaced people were not designed for climate mobility. The 1951 Refugee Convention does not recognise climate displacement as grounds for refugee status, and the governance architecture for managing climate-related movement remains fragmented and inadequate. In [Sudan](https://humanitariancommons.org/topics/sudan/), the intersection of climate stress and armed conflict has compounded displacement in ways that illustrate how these drivers reinforce each other.
 
 ## Implications for Humanitarian Reform
 
-The climate crisis strengthens the case for fundamental reform of the humanitarian system. It underscores the limitations of a model based on short-term emergency response when the underlying conditions are chronic and worsening. It highlights the need for greater investment in anticipatory action, local preparedness, and the integration of humanitarian and development approaches. And it raises unavoidable questions about justice: about who should pay for adaptation and loss and damage, about whose knowledge and priorities should guide response, and about the structural changes needed to address vulnerability at its roots.
+The climate crisis strengthens the case for fundamental reform of the humanitarian system. It underscores the limitations of a model based on short-term emergency response when the underlying conditions are chronic and worsening. It highlights the need for greater investment in anticipatory action, local preparedness, and the integration of humanitarian and development approaches. The [localisation](https://humanitariancommons.org/topics/localisation/) agenda is particularly relevant here: communities on the frontlines of climate change possess knowledge and adaptive capacity that the international system often fails to recognise or resource.
+
+And it raises unavoidable questions about justice: about who should pay for adaptation and loss and damage, about whose knowledge and priorities should guide response, and about the structural changes needed to address vulnerability at its roots.

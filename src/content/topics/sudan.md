@@ -25,7 +25,7 @@ lastUpdated: "2026-04-04"
 
 ## Overview
 
-Sudan is experiencing one of the most severe humanitarian crises in the world, and one of the most neglected. The armed conflict that erupted in April 2023 between the Sudanese Armed Forces (SAF), led by General Abdel Fattah al-Burhan, and the Rapid Support Forces (RSF), led by General Mohamed Hamdan Dagalo (known as Hemedti), has devastated a country of over 45 million people that was already fragile after decades of authoritarianism, conflict, and economic crisis.
+Sudan is experiencing one of the most severe humanitarian crises in the world, and one of the most neglected. The armed conflict that erupted in April 2023 between the Sudanese Armed Forces (SAF), led by General Abdel Fattah al-Burhan, and the Rapid Support Forces (RSF), led by General Mohamed Hamdan Dagalo (known as Hemedti), has devastated a country of over 49 million people that was already fragile after decades of authoritarianism, conflict, and economic crisis.
 
 The scale of the disaster is staggering. Over 10 million people have been displaced, both internally and across borders into Chad, South Sudan, Egypt, and other neighbouring countries. Entire cities, including large parts of the capital Khartoum, have been destroyed. The health system has largely collapsed. Food production has plummeted, and multiple regions face famine conditions.
 
@@ -33,14 +33,16 @@ The scale of the disaster is staggering. Over 10 million people have been displa
 
 What distinguishes Sudan's crisis is not only its severity but the degree to which it has been overlooked by the international community. Compared to other major conflicts, Sudan has received dramatically less media coverage, political attention, and humanitarian funding. The UN's humanitarian appeal for Sudan has been chronically underfunded, with large gaps between what is needed and what is provided.
 
-This neglect has prompted sharp criticism from humanitarian organisations and analysts who see it as a reflection of structural biases in international attention and resource allocation. Some have drawn explicit comparisons to the response to the Ukraine crisis, arguing that the discrepancy reveals racialized hierarchies of concern within the humanitarian system.
+This neglect has prompted sharp criticism from humanitarian organisations and analysts who see it as a reflection of structural biases in international attention and resource allocation. Some have drawn explicit comparisons to the response to the Ukraine crisis, arguing that the discrepancy reveals racialized hierarchies of concern within the [humanitarian system](https://humanitariancommons.org/topics/future-of-the-humanitarian-system/).
 
 ## Access and Protection Failures
 
 Both warring parties have obstructed humanitarian access, using aid as an instrument of war. Bureaucratic impediments, active denial of access, attacks on aid workers, and the looting of humanitarian supplies have all been documented. The international community has largely failed to secure meaningful access for humanitarian organisations.
 
+[MSF](https://humanitariancommons.org/organizations/msf/) has been among the few international organisations maintaining operations in some of the most affected areas, documenting the scale of suffering and the obstruction of aid. The [ICRC](https://humanitariancommons.org/organizations/icrc/) has similarly attempted to maintain access, though its operations have been severely constrained.
+
 The protection of civilians has been catastrophically inadequate. Reports from Darfur, in particular, have documented patterns of ethnically targeted violence, sexual violence, and mass atrocities that echo the horrors of the early 2000s. The international mechanisms designed to prevent such atrocities have proven ineffective.
 
 ## Implications for the Humanitarian System
 
-Sudan is a test case for the humanitarian system's capacity to respond to large-scale, complex emergencies. The failures in Sudan raise fundamental questions about prioritisation, funding mechanisms, the political will to protect civilians, and the ability of the international system to function when major powers are disengaged or complicit. For those concerned with the future of humanitarian action, Sudan is an unavoidable reference point.
+Sudan is a test case for the humanitarian system's capacity to respond to large-scale, complex emergencies. The failures in Sudan raise fundamental questions about prioritisation, funding mechanisms, the political will to protect civilians, and the ability of the international system to function when major powers are disengaged or complicit. For those concerned with the [future of humanitarian action](https://humanitariancommons.org/topics/future-of-the-humanitarian-system/), Sudan is an unavoidable reference point. The crisis also underscores the arguments made by the [localisation](https://humanitariancommons.org/topics/localisation/) movement: local Sudanese organisations have been among the primary responders, yet they receive a fraction of the funding and recognition.

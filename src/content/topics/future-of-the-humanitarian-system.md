@@ -18,6 +18,7 @@ relatedPeople:
   - "philippe-lazzarini"
   - "pierre-krahenbuhl"
   - "francesca-albanese"
+  - "mirjana-spoljaric-egger"
 relatedOrganizations:
   - "msf"
   - "unrwa"
@@ -34,21 +35,23 @@ These numbers describe a system under enormous strain. But the crisis is not sim
 
 ## A System Designed for a Different Era
 
-The current humanitarian architecture took shape in the 1990s, following the end of the Cold War and a series of catastrophic failures, notably in Rwanda, Somalia, and the Balkans. The reforms of that era, including the creation of the Inter-Agency Standing Committee (IASC), the cluster coordination system, and the Central Emergency Response Fund (CERF), were designed to improve the coordination and effectiveness of international humanitarian response.
+The current humanitarian architecture took shape through a series of reforms beginning in the 1990s, following the end of the Cold War and a series of catastrophic failures, notably in Rwanda, Somalia, and the Balkans. The Inter-Agency Standing Committee (IASC) was established in 1991 to improve coordination. A second wave of reform followed in 2005-2006, introducing the cluster coordination system and the Central Emergency Response Fund (CERF). Together, these reforms were designed to improve the coordination and effectiveness of international humanitarian response.
 
-These reforms assumed a particular kind of crisis: relatively bounded, with a clear beginning and end, affecting states that were temporarily unable to provide for their populations, and addressable through international mobilisation of resources and expertise. The reality of contemporary humanitarian need, characterised by protracted conflicts, chronic fragility, climate-driven deterioration, and the intersection of all three, bears little resemblance to these assumptions.
+These reforms assumed a particular kind of crisis: relatively bounded, with a clear beginning and end, affecting states that were temporarily unable to provide for their populations, and addressable through international mobilisation of resources and expertise. The reality of contemporary humanitarian need, characterised by protracted conflicts like those in [Palestine](https://humanitariancommons.org/topics/palestine/) and [Sudan](https://humanitariancommons.org/topics/sudan/), chronic fragility, [climate-driven](https://humanitariancommons.org/topics/climate-and-humanitarianism/) deterioration, and the intersection of all three, bears little resemblance to these assumptions.
 
 ## Funding and the Political Economy
 
 The humanitarian system's funding model is fundamentally voluntary. States contribute to humanitarian appeals based on political interest, historical relationships, and domestic considerations rather than assessed need. This produces radical inequities in attention and resources: some crises are relatively well-funded while others are chronically neglected, often along lines that reflect geopolitical priorities and, critics argue, racialized hierarchies of concern.
 
-The flow of money through the system is itself a significant issue. Despite commitments to direct more funding to local actors (see the localisation agenda), the overwhelming majority of humanitarian resources continues to flow through a small number of large international organisations. The transaction costs, overhead charges, and bureaucratic requirements associated with this intermediated funding model reduce the resources that ultimately reach affected populations.
+The flow of money through the system is itself a significant issue. Despite commitments to direct more funding to local actors (see the [localisation](https://humanitariancommons.org/topics/localisation/) agenda), the overwhelming majority of humanitarian resources continues to flow through a small number of large international organisations. The transaction costs, overhead charges, and bureaucratic requirements associated with this intermediated funding model reduce the resources that ultimately reach affected populations.
+
+The financial pressures facing major institutions illustrate the scale of the problem. The [ICRC](https://humanitariancommons.org/organizations/icrc/) has been forced to cut its budget by 17 percent and eliminate thousands of positions. [UNRWA](https://humanitariancommons.org/organizations/unrwa/) has faced an existential funding crisis at the moment of greatest need, with Commissioner-General [Philippe Lazzarini](https://humanitariancommons.org/people/philippe-lazzarini/) warning that the agency's very survival is at stake.
 
 ## Competing Visions for Reform
 
 There is no shortage of proposals for reforming the humanitarian system. They range from incremental improvements (better coordination, more efficient funding mechanisms, greater accountability) to fundamental restructuring (dismantling the current architecture in favour of systems that centre local and national capacity, or reconceiving humanitarian action as part of broader social protection and development frameworks).
 
-The localisation agenda, the push for decolonisation, the debate about the humanitarian-development-peace nexus, and the growing critique of the political economy of aid are all dimensions of this broader conversation about the system's future. What remains uncertain is whether the institutional interests vested in the current system will permit the kind of structural change that many analysts believe is necessary.
+The [localisation](https://humanitariancommons.org/topics/localisation/) agenda, the push for decolonisation, the debate about the humanitarian-development-peace nexus, and the growing critique of the political economy of aid are all dimensions of this broader conversation about the system's future. What remains uncertain is whether the institutional interests vested in the current system will permit the kind of structural change that many analysts believe is necessary.
 
 ## The Question of Legitimacy
 

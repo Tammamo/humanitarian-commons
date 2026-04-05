@@ -14,4 +14,4 @@ relatedOrganizations:
 links: []
 ---
 
-Philippe Lazzarini has been at the centre of the debate over the future of UNRWA and the humanitarian response in Palestine. Under his leadership, the agency has faced existential threats, including the suspension of funding by multiple donor governments in early 2024 and Israeli legislation to restrict its operations. Lazzarini has been a vocal advocate for the protection of Palestinian refugees and for the political necessity of UNRWA's mandate.
+Philippe Lazzarini has been at the centre of the debate over the future of [UNRWA](https://humanitariancommons.org/organizations/unrwa/) and the humanitarian response in [Palestine](https://humanitariancommons.org/topics/palestine/). Under his leadership, the agency has faced existential threats, including the suspension of funding by multiple donor governments in early 2024 and Israeli legislation to restrict its operations. Lazzarini has been a vocal advocate for the protection of Palestinian refugees and for the political necessity of UNRWA's mandate.
