@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const items = (await getCollection('library')).filter(i => !i.data.draft);
+
+const books = items.filter(i => i.data.type === 'book').sort((a, b) => a.data.title.localeCompare(b.data.title));
+const articles = items.filter(i => i.data.type === 'article').sort((a, b) => a.data.title.localeCompare(b.data.title));
+const reports = items.filter(i => ['report', 'essay'].includes(i.data.type)).sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const typeLabels: Record<string, string> = {
+  book: 'Book',
+  article: 'Article',
+  report: 'Report',
+  essay: 'Essay',
+};
+---
+
+<BaseLayout title="Library" description="Books, articles, and reports that inform humanitarian understanding and debate.">
+  <section class="page-header">
+    <div class="container container--narrow">
+      <h1>Library</h1>
+      <p>A curated collection of books, articles, and reports essential to understanding humanitarian action, policy, and the systems that shape it.</p>
+    </div>
+  </section>
+
+  {books.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Books</h2>
+        <div class="grid grid--2">
+          {books.map(item => (
+            <a href={`/library/${item.id}/`} class="library-card">
+              <div class="library-card__header">
+                <span class="library-card__type tag tag--accent">{typeLabels[item.data.type]}</span>
+                {item.data.year && <span class="library-card__year">{item.data.year}</span>}
+              </div>
+              <h3 class="library-card__title">{item.data.title}</h3>
+              <p class="library-card__author">{item.data.author}</p>
+              <p class="library-card__description">{item.data.description}</p>
+              {item.data.tags.length > 0 && (
+                <div class="library-card__tags">
+                  {item.data.tags.slice(0, 4).map(tag => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {articles.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Articles</h2>
+        <div class="grid grid--2">
+          {articles.map(item => (
+            <a href={`/library/${item.id}/`} class="library-card">
+              <div class="library-card__header">
+                <span class="library-card__type tag tag--accent">{typeLabels[item.data.type]}</span>
+                {item.data.year && <span class="library-card__year">{item.data.year}</span>}
+              </div>
+              <h3 class="library-card__title">{item.data.title}</h3>
+              <p class="library-card__author">{item.data.author}</p>
+              <p class="library-card__description">{item.data.description}</p>
+              {item.data.tags.length > 0 && (
+                <div class="library-card__tags">
+                  {item.data.tags.slice(0, 4).map(tag => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {reports.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Reports &amp; Essays</h2>
+        <div class="grid grid--2">
+          {reports.map(item => (
+            <a href={`/library/${item.id}/`} class="library-card">
+              <div class="library-card__header">
+                <span class="library-card__type tag tag--accent">{typeLabels[item.data.type]}</span>
+                {item.data.year && <span class="library-card__year">{item.data.year}</span>}
+              </div>
+              <h3 class="library-card__title">{item.data.title}</h3>
+              <p class="library-card__author">{item.data.author}</p>
+              <p class="library-card__description">{item.data.description}</p>
+              {item.data.tags.length > 0 && (
+                <div class="library-card__tags">
+                  {item.data.tags.slice(0, 4).map(tag => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .page-header h1 { margin-bottom: var(--space-md); }
+  .page-header p { color: var(--color-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+  .section__title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+  }
+
+  .library-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .library-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .library-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+  }
+
+  .library-card__year {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .library-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    line-height: 1.4;
+  }
+
+  .library-card__author {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .library-card__description {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+    flex: 1;
+  }
+
+  .library-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: auto;
+  }
+</style>
