@@ -8,7 +8,9 @@ photo: ""
 bio: "Francesca Albanese is an Italian-born international lawyer who has served as the UN Special Rapporteur on the occupied Palestinian territories since 2022. Her reports have been among the most significant international assessments of the legal dimensions of the situation in Palestine."
 relatedTopics:
   - "palestine"
-relatedOrganizations: []
+  - "future-of-the-humanitarian-system"
+relatedOrganizations:
+  - "unrwa"
 links: []
 ---
 
