@@ -14,9 +14,14 @@ relatedTopics:
   - "palestine"
   - "sudan"
   - "climate-and-humanitarianism"
-relatedPeople: []
+relatedPeople:
+  - "philippe-lazzarini"
+  - "pierre-krahenbuhl"
+  - "francesca-albanese"
 relatedOrganizations:
   - "msf"
+  - "unrwa"
+  - "icrc"
 resources: []
 lastUpdated: "2026-04-04"
 ---
