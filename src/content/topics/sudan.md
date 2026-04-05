@@ -18,6 +18,7 @@ relatedTopics:
 relatedPeople: []
 relatedOrganizations:
   - "msf"
+  - "icrc"
 resources: []
 lastUpdated: "2026-04-04"
 ---
