@@ -15,7 +15,8 @@ relatedTopics:
   - "future-of-the-humanitarian-system"
   - "climate-and-humanitarianism"
 relatedPeople: []
-relatedOrganizations: []
+relatedOrganizations:
+  - "msf"
 resources: []
 lastUpdated: "2026-04-04"
 ---
