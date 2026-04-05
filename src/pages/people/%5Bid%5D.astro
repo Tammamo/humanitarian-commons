@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const people = await getCollection('people');
+  return people.map(person => ({
+    params: { id: person.id },
+    props: { person },
+  }));
+}
+
+const { person } = Astro.props;
+const { Content } = await render(person);
+
+const allTopics = await getCollection('topics');
+const allOrgs = await getCollection('organizations');
+const allLibrary = await getCollection('library');
+
+const relatedTopics = allTopics.filter(t =>
+  person.data.relatedTopics.includes(t.id)
+);
+const relatedOrgs = allOrgs.filter(o =>
+  person.data.relatedOrganizations.includes(o.id)
+);
+
+// Also find topics that reference this person (backlinks)
+const backlinkTopics = allTopics.filter(t =>
+  t.data.relatedPeople.includes(person.id) && !person.data.relatedTopics.includes(t.id)
+);
+
+// Find library items by this author
+const authorWorks = allLibrary.filter(l => l.data.authorId === person.id);
+
+// Determine if this is an author/academic (non-practitioner)
+const isAuthor = ['author', 'academic', 'thinker', 'journalist'].includes(person.data.category);
+---
+
+<BaseLayout title={person.data.name} description={person.data.bio || `${person.data.name} — ${person.data.title || ''}`}>
+  <article class="person-page">
+    <header class="person-header">
+      <div class="container container--narrow">
+        <div class="person-header__content">
+          {person.data.photo && (
+            <img src={person.data.photo} alt={person.data.name} class="person-header__photo" />
+          )}
+          <div>
+            <h1 class="person-header__name">{person.data.name}</h1>
+            {person.data.title && <p class="person-header__title">{person.data.title}</p>}
+            {person.data.organization && <p class="person-header__org">{person.data.organization}</p>}
+            {person.data.bio && <p class="person-header__bio">{person.data.bio}</p>}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    {(relatedTopics.length > 0 || backlinkTopics.length > 0 || relatedOrgs.length > 0 || authorWorks.length > 0) && (
+      <section class="section connections">
+        <div class="container container--narrow">
+          <h2 class="section__title">Connections</h2>
+          {authorWorks.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Works in Library</h3>
+              {authorWorks.map(w => (
+                <a href={`/library/${w.id}/`} class="connection-link">
+                  <em>{w.data.title}</em>
+                  {w.data.year && <span class="connection-year"> ({w.data.year})</span>}
+                </a>
+              ))}
+            </div>
+          )}
+          {[...relatedTopics, ...backlinkTopics].length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Related Topics</h3>
+              {[...relatedTopics, ...backlinkTopics].map(t => (
+                <a href={`/topics/${t.id}/`} class="connection-link">{t.data.title}</a>
+              ))}
+            </div>
+          )}
+          {relatedOrgs.length > 0 && (
+            <div class="connections__group">
+              <h3 class="connections__group-title">Organizations</h3>
+              {relatedOrgs.map(o => (
+                <a href={`/organizations/${o.id}/`} class="connection-link">{o.data.name}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .person-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .person-header__content {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .person-header__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--color-border);
+  }
+
+  .person-header__name {
+    font-size: 2rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .person-header__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+  }
+
+  .person-header__org {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .person-header__bio {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .prose {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .connections__group {
+    margin-bottom: var(--space-lg);
+  }
+
+  .connections__group-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .connection-link {
+    display: block;
+    padding: var(--space-xs) 0;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+  }
+
+  .connection-year {
+    color: var(--color-text-muted);
+    font-style: normal;
+  }
+
+  @media (max-width: 768px) {
+    .person-header__content { flex-direction: column; }
+    .person-header__name { font-size: 1.5rem; }
+  }
+</style>
