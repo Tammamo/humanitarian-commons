@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Disclaimer" description="Disclaimer — AI usage, editorial standards, and feedback for The Humanitarian Commons.">
+  <section class="page-header">
+    <div class="container container--narrow">
+      <h1>Disclaimer</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose">
+        <p>
+          This website was constructed with help from AI. The model used was Claude Cowork,
+          mostly using Opus 4.6 model.
+        </p>
+
+        <h2>What the AI helped with</h2>
+        <ul>
+          <li>Construct the code for the site and help with the technical web design, development, and hosting.</li>
+          <li>Scheduled push of contents to the site.</li>
+          <li>Debugging and ensuring that the site functions as intended.</li>
+          <li>Fact check all the content of the site against publicly available records.</li>
+          <li>Scanning for documents, updates, and literature search. Every piece of content was then human-read and verified to avoid any fabricated or hallucinated content and to ensure relevance and accuracy.</li>
+        </ul>
+
+        <h2>What the AI was not used for</h2>
+        <ul>
+          <li>The design of the structure of the site.</li>
+          <li>The compilation of the content of the site.</li>
+          <li>The writing of the content of the site.</li>
+          <li>The linking of content.</li>
+          <li>Editorial judgement on what to include or exclude.</li>
+        </ul>
+
+        <p>
+          This project is run privately and individually and is not for profit. The use of AI is
+          minimised to guarantee efficiency but is conscious of the risks of AI usage for the
+          accuracy of information as well as the environmental and labour costs of AI, especially
+          in the Global South and in contexts relevant to humanitarianism. This balance is
+          revisited regularly and adjusted as appropriate.
+        </p>
+
+        <h2>Feedback</h2>
+        <p>
+          For any feedback, suggestions, or corrections you can leave comments
+          <a href="https://forms.gle/u1KqJF1BSiD56VZu5" target="_blank" rel="noopener noreferrer">here</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .prose {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .prose h2 {
+    font-size: 1.4rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose ul {
+    margin: var(--space-md) 0;
+    padding-left: var(--space-xl);
+  }
+
+  .prose li {
+    margin-bottom: var(--space-sm);
+  }
+</style>
