@@ -48,6 +48,11 @@ const backlinkTopics = allTopics.filter(t =>
 
     <section class="section">
       <div class="container container--narrow">
+        {org.data.logo && (
+          <div class="org-logo">
+            <img src={org.data.logo} alt={`${org.data.name} logo`} />
+          </div>
+        )}
         <div class="prose">
           <Content />
         </div>
@@ -110,6 +115,21 @@ const backlinkTopics = allTopics.filter(t =>
     font-family: var(--font-heading);
     font-size: 0.9rem;
     color: var(--color-text-muted);
+  }
+
+  .org-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .org-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .prose { font-size: 1.05rem; line-height: 1.8; }
