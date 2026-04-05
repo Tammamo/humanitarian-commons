@@ -7,6 +7,8 @@ headquarters: "Geneva, Switzerland"
 website: "https://www.icrc.org"
 relatedTopics:
   - "future-of-the-humanitarian-system"
+  - "palestine"
+  - "sudan"
 relatedPeople:
   - "pierre-krahenbuhl"
 links: []
