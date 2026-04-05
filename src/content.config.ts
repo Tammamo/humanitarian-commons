@@ -33,6 +33,7 @@ const people = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/people' }),
   schema: z.object({
     name: z.string(),
+    category: z.enum(['practitioner', 'author', 'academic', 'journalist', 'thinker']).default('practitioner'),
     title: z.string().optional(),
     organization: z.string().optional(),
     role: z.string().optional(),
@@ -64,4 +65,26 @@ const organizations = defineCollection({
   }),
 });
 
-export const collections = { topics, people, organizations };
+const library = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/library' }),
+  schema: z.object({
+    title: z.string(),
+    type: z.enum(['book', 'article', 'report', 'essay']),
+    author: z.string(),
+    authorId: z.string().optional(),
+    year: z.number().optional(),
+    publisher: z.string().optional(),
+    isbn: z.string().optional(),
+    doi: z.string().optional(),
+    url: z.string().url().optional(),
+    cover: z.string().optional(),
+    description: z.string(),
+    tags: z.array(z.string()).default([]),
+    relatedTopics: z.array(z.string()).default([]),
+    relatedPeople: z.array(z.string()).default([]),
+    relatedOrganizations: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { topics, people, organizations, library };
