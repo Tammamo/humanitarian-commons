@@ -1,7 +1,7 @@
 ---
 name: "International Committee of the Red Cross"
 acronym: "ICRC"
-type: international-organization
+type: other
 description: "The guardian of the Geneva Conventions and the world's oldest and largest humanitarian organisation focused on the protection of victims of armed conflict."
 headquarters: "Geneva, Switzerland"
 website: "https://www.icrc.org"
