@@ -17,9 +17,11 @@ relatedTopics:
 relatedPeople:
   - "philippe-lazzarini"
   - "francesca-albanese"
+  - "pierre-krahenbuhl"
 relatedOrganizations:
   - "unrwa"
   - "msf"
+  - "icrc"
 resources: []
 lastUpdated: "2026-04-04"
 ---
