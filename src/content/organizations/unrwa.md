@@ -5,6 +5,7 @@ type: un-agency
 description: "The United Nations Relief and Works Agency for Palestine Refugees in the Near East, providing education, health, relief, and social services to over 5.9 million registered Palestinian refugees."
 headquarters: "Amman, Jordan / Gaza City"
 website: "https://www.unrwa.org"
+logo: "/logos/unrwa.svg"
 relatedTopics:
   - "palestine"
   - "future-of-the-humanitarian-system"
