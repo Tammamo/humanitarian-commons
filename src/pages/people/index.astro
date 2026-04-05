@@ -2,7 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const people = (await getCollection('people')).filter(p => !p.data.draft).sort((a, b) => a.data.name.localeCompare(b.data.name));
+// Only show practitioners on the People listing page; authors/academics appear through Library pages
+const people = (await getCollection('people'))
+  .filter(p => !p.data.draft && p.data.category === 'practitioner')
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
 ---
 
 <BaseLayout title="People" description="Key people in humanitarian contexts and systems.">
